@@ -17,7 +17,7 @@ function draw() {
     if (status != "") {
         objectDetector.detect(video, gotResult);
         document.getElementById("status").innerHTML = "Status: Detected Objects";
-        for (let i = 0; i < objects.length; i++) {
+        for (var i = 0; i < objects.length; i++) {
             document.getElementById("number_of_objects").innerHTML = "Number of Objects Detected: " +  objects.length;
             fill("#FF0000");
             strokeWeight(2);
