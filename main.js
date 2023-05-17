@@ -20,7 +20,7 @@ function modelLoaded() {
     video.volume(0);
 }
 
-function gotResult(results, error) {
+function gotResult(error, results) {
     if (error) {
         console.log(error);
     }
