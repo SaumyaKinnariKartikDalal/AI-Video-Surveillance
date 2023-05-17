@@ -12,6 +12,25 @@ function setup(){
     canvas.center();
 }
 
+function modelLoaded() {
+    console.log("Model Loaded");
+    status = true;
+    video.loop();
+    video.speed(1);
+    video.volume(0);
+}
+
+function gotResult(results, error) {
+    if (error) {
+        console.log(error);
+    }
+    else {
+        console.log(results);
+        objects = results;
+    }
+}
+
+
 function draw() {
     image(video,0,0,480,380);
     if (status != "") {
@@ -37,20 +56,3 @@ function start() {
     document.getElementById("status").innerHTML = "Status: Detecting Objects";
 }
 
-function modelLoaded() {
-    console.log("Model Loaded");
-    status = true;
-    video.loop();
-    video.speed(1);
-    video.volume(0);
-}
-
-function gotResult(results, error) {
-    if (error) {
-        console.log(error);
-    }
-    else {
-        console.log(results);
-        objects = results;
-    }
-}
